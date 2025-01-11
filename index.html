@@ -32,6 +32,7 @@
             class="logo2"
           />
         </div>
+
         <div class="right">
           <ul class="tab-links">
             <li><label for="home">HOME</label></li>
@@ -40,8 +41,16 @@
             <li><label for="work">WORK</label></li>
             <li><label for="contact">CONTACT</label></li>
           </ul>
+          <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
         </div>
       </div>
+
+      <script>
+        function toggleMenu() {
+          const menu = document.querySelector(".tab-links");
+          menu.classList.toggle("active");
+        }
+      </script>
 
       <div class="main">
         <div id="about-content">
@@ -169,10 +178,10 @@
 
       <div class="get-in-touch">
         <img src="images/get-in-touch.png" alt="get-in-touch" />
-        <h1>
+        <h2>
           Want to build <br />
           something amazing?
-        </h1>
+        </h2>
         <button>GET IN TOUCH</button>
       </div>
 

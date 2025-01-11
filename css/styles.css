@@ -15,14 +15,14 @@ body {
 .container {
   background-color: #ffffff;
   width: 100%;
-  height: 2700px;
+  height: auto;
   text-align: center;
 }
 
 /* (шапка)верхушка сайта */
 .head {
   width: 100%;
-  height: 928px;
+  height: 960px;
   background-color: #999999;
   overflow: hidden; /* Скрываем возможные выходящие элементы */
 }
@@ -36,13 +36,15 @@ body {
   width: 130px;
   height: 30px;
   flex-shrink: 0;
+
+  transition: all 0.5s ease;
 }
 
 /* задний фон шапки */
 .bg {
   margin: auto;
   width: 99.9%;
-  height: 928px;
+  height: 960px;
   left: 2px;
 }
 
@@ -61,6 +63,8 @@ body {
   left: 51%;
   top: 43%;
   transform: translate(-50%);
+
+  transition: all 0.5s ease;
 }
 
 /* An award-winning construction management firm */
@@ -78,6 +82,8 @@ body {
   left: 50%;
   top: 55%;
   transform: translate(-50%);
+
+  transition: all 0.5s ease;
 }
 
 /* SCROLL DOWN */
@@ -100,7 +106,7 @@ body {
 /* навигационная панель после шапки */
 .navbar {
   width: 100%;
-  height: 65px;
+  height: auto;
   display: flex;
   flex-direction: row;
 
@@ -108,6 +114,13 @@ body {
   background: #fff;
 
   text-align: center;
+}
+
+.hamburger-menu {
+  display: none; /* Скрываем по умолчанию */
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: auto;
 }
 
 /* левая часть нав.панели */
@@ -127,6 +140,7 @@ body {
 
   padding-top: 24px;
   padding-right: 100px;
+  transition: all 0.5s ease;
 }
 
 /* пункты навигации */
@@ -148,6 +162,7 @@ input[type="radio"] {
 .tab-links {
   list-style: none;
   display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
   padding: 0;
   margin: 0;
   padding-left: 50px;
@@ -191,6 +206,7 @@ input[type="radio"]:checked ~ .navbar .tab-links label[for="about"] {
   width: 100%;
 
   display: flex; /* Используем flexbox */
+
   justify-content: center; /* Горизонтальное центрирование */
 }
 
@@ -301,6 +317,7 @@ input[type="radio"]:checked ~ .navbar .tab-links label[for="about"] {
   margin-left: 100px;
   width: 30%;
   display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
   flex-direction: column;
   text-align: left;
 }
@@ -322,6 +339,7 @@ input[type="radio"]:checked ~ .navbar .tab-links label[for="about"] {
 .text-but {
   width: 70%;
   display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
   justify-content: space-between;
 }
 
@@ -441,7 +459,7 @@ input[type="radio"]:checked ~ .navbar .tab-links label[for="about"] {
   border: 0;
 }
 
-.get-in-touch h1 {
+.get-in-touch h2 {
   color: #48555b;
   text-align: center;
   font-family: "Open Sans";
@@ -451,9 +469,13 @@ input[type="radio"]:checked ~ .navbar .tab-links label[for="about"] {
   line-height: 36px; /* 120% */
   letter-spacing: 0.15px;
 
+  /* margin-top: 120px;
+  margin-left: 800px; */
+
   position: absolute;
-  margin-top: 120px;
-  margin-left: 800px;
+  top: 225%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .get-in-touch button {
@@ -474,8 +496,9 @@ input[type="radio"]:checked ~ .navbar .tab-links label[for="about"] {
   letter-spacing: 0.5px;
 
   position: absolute;
-  margin-top: 238px;
-  margin-left: 880px;
+  top: 240%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .get-in-touch button:hover {
@@ -489,6 +512,7 @@ input[type="radio"]:checked ~ .navbar .tab-links label[for="about"] {
 
   background: #171819;
   display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
   flex-direction: row;
 }
 
@@ -554,6 +578,7 @@ input[type="radio"]:checked ~ .navbar .tab-links label[for="about"] {
   text-align: right;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: right;
 }
 .news-right {
@@ -561,21 +586,33 @@ input[type="radio"]:checked ~ .navbar .tab-links label[for="about"] {
   text-align: left;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
 }
 
 footer {
   width: 100%;
   height: 300px;
-  margin-top: 13px;
 
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .foot-top {
   width: 100%;
   height: 240px;
   background: #141a20;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .foot-bottom {
@@ -589,9 +626,8 @@ footer {
   height: 148px;
   flex-shrink: 0;
 
-  position: absolute;
-  margin: 42px auto 50px 425px;
-  /* border: 1px solid #979797; */
+  
+  /* margin: 42px auto 50px 425px; */
 
   display: flex;
   flex-direction: column;
@@ -605,8 +641,7 @@ footer {
   font-style: normal;
   font-weight: 400;
 
-  position: absolute;
-  margin: 0px 191px 133px 0px;
+  /* margin: 0px 191px 133px 0px; */
 }
 
 .foot-company img {
@@ -614,8 +649,8 @@ footer {
   height: 23px;
   flex-shrink: 0;
 
-  position: absolute;
-  margin: 34px 148px 91px 0px;
+  /* position: absolute;
+  margin: 34px 148px 91px 0px; */
 }
 
 .foot-company p {
@@ -627,20 +662,20 @@ footer {
   line-height: 19px;
 
   text-align: left;
-  margin-top: 72px;
+  margin-top: 12px;
 }
 
 .foot-links {
   width: 262px;
-  height: 150px;
+  height: auto;
   flex-shrink: 0;
 
-  position: absolute;
-  margin: 42px auto 48px 780px;
+  /* position: absolute;
+  margin: 42px auto 48px 780px; */
   /* border: 1px solid #979797; */
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .foot-links h1 {
@@ -655,6 +690,7 @@ footer {
   letter-spacing: 0.846px;
   margin-top: 0;
   margin-bottom: 15px;
+
 }
 
 .links-home {
@@ -669,7 +705,6 @@ footer {
   font-size: 11px;
   font-style: normal;
   font-weight: 600;
-  letter-spacing: 0.846px;
   cursor: default;
   text-align: left;
 
@@ -685,8 +720,8 @@ footer {
   width: 52px;
   height: 75px;
 
-  position: absolute;
-  margin: 30px 100px 50px 110px;
+  /* position: absolute;
+  margin: 30px 100px 50px 110px; */
   /* border: 1px solid #979797; */
 
   color: #fff;
@@ -701,19 +736,20 @@ footer {
   width: 62px;
   height: 75px;
 
-  position: absolute;
-  margin: 30px 0px 50px 199px;
+  /* position: absolute;
+  margin: 30px 0px 50px 199px; */
   /* border: 1px solid #979797; */
 }
 
 .foot-contact {
   display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
   flex-direction: column;
   width: 141px;
-  height: 158px;
+  height: auto;
 
-  position: absolute;
-  margin: 42px auto 40px 1150px;
+  /* position: absolute;
+  margin: 42px auto 40px 1150px; */
   /* border: 1px solid #979797; */
 }
 
@@ -745,8 +781,8 @@ footer {
   height: 13px;
   flex-shrink: 0;
 
-  position: absolute;
-  margin: 72px auto 155px 1325px;
+  /* position: absolute;
+  margin: 72px auto 155px 1325px; */
   /* border: 1px solid #979797; */
 
   cursor: default;
@@ -776,58 +812,373 @@ footer {
 
 /* Responsive Styles */
 
-/* Для мобильных устройств (до 768px) */
-@media (max-width: 768px) {
-  .head {
-    height: auto;
+@media (max-width: 1160px) {
+  .pwk {
+    font-size: 40px;
+  }
+
+  .acmf,
+  .sd {
+    font-size: 16px; /* Сжимаем шрифты */
+  }
+
+  .logo1 {
+    width: 100px; /* Уменьшаем размер логотипа */
+  }
+
+  .left {
+    width: 30%;
+  }
+  .right {
+    width: 70%;
+  }
+  .tab-links li {
     padding: 20px;
   }
 
-  .pwk {
-    font-size: 40px;
-    top: 30%;
-  }
-
-  .navbar {
-    flex-direction: column;
-    height: auto;
+  .onimage {
+    font-size: 20px;
   }
 
   .about {
-    flex-direction: column;
     height: auto;
+    width: 100%;
+  }
+  .about-left {
+    width: 40%;
+    margin-left: 100px;
+  }
+  .about-right {
+    width: 60%;
+    margin: auto;
   }
 
-  .about-left,
-  .about-right {
-    width: 100%;
-    margin-left: 0;
+  .text-but p {
+    margin: 0px 0px 11px 50px;
+  }
+  .as {
+    margin: 0px 80px 0px 0px;
   }
 
   .services-bottom {
-    flex-direction: column;
-  }
-
-  .rect {
+    height: auto;
     width: 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-}
 
-/* Для планшетов (до 1024px) */
-@media (max-width: 1024px) {
-  .pwk {
-    font-size: 60px;
-  }
-
-  .about {
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
   .rect {
-    width: 48%;
-    margin-right: 2%;
+    margin: 0px 40px 0px 0px;
+  }
+
+  .get-in-touch {
+    width: 100%;
+  }
+
+  .get-in-touch h2 {
+    transform: translate(-50%);
+
+    top: 223%;
+    font-size: 24px;
+  }
+
+  .get-in-touch button {
+    top: 235%;
+    transform: translate(-50%);
+  }
+
+  .newsletter {
+    height: auto;
+  }
+  .newsletter h1 {
+    font-size: 18px;
+    padding: 15px;
+  }
+  .news-right input[type="text"] {
+    height: 35px;
+    padding: 0px;
+  }
+  .news-right button {
+    height: 37px;
+    padding: 0px;
+  }
+
+  footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Общие настройки для небольших устройств (мобильные) */
+@media (max-width: 830px) {
+  body {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    height: auto; /* Высота должна быть динамичной */
+  }
+
+  .head {
+    height: auto; /* Высота шапки адаптируется */
+  }
+
+  .logo1 {
+    width: 50px; /* Уменьшаем размер логотипа */
+  }
+
+  .pwk {
+    font-size: 20px; /* Уменьшаем размер текста */
+  }
+
+  .acmf,
+  .sd {
+    font-size: 12px; /* Сжимаем шрифты */
+  }
+
+  .right {
+    display: flex;
+  }
+
+  .navbar {
+    width: 100%;
+    height: auto;
+  }
+
+  .hamburger-menu {
+    display: block; /* Показываем кнопку на мобильных */
+    margin: auto;
+    padding: 10px;
+    margin-right: 50px;
+  }
+
+  .tab-links {
+    display: none; /* Скрываем меню по умолчанию */
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .tab-links.active {
+    display: flex; /* Показываем меню, когда класс active добавлен */
+  }
+
+  .logo2 {
+    width: 50px;
+    margin: auto;
+    padding: 15px;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column; /* Ставим секции одна под другой */
+
+    width: 100%;
+    height: auto;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  #about-content h1 {
+    font-size: 14px;
+  }
+
+  .about-left {
+    width: 30%;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .about-left h2 {
+    font-size: 14px;
+  }
+
+  .about-right {
+    width: 70%;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .about-right img {
+    width: 130px;
+    height: auto;
+    margin: 5px;
+  }
+
+  .onimage {
+    margin: 20px 0px 20px 20px;
+    font-size: 16px;
+  }
+
+  .services {
+    width: 100%;
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column; /* Ставим секции одна под другой */
+
+    height: auto;
+  }
+
+  .services-top {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .oc-line {
+    margin: auto;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .oc-line p {
+    font-size: 14px;
+  }
+
+  .text-but {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+  }
+
+  .text-but p {
+    margin: auto;
+  }
+
+  .as {
+    margin: 20px auto;
+  }
+
+  .services-bottom {
+    height: auto;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .forrec {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .rect {
+    margin: 20px auto;
+    width: 280px;
+    height: 300px;
+  }
+
+  .rect img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .rect h3 {
+    font-size: 14px;
+  }
+
+  .rect p {
+    font-size: 11px;
+  }
+
+  .get-in-touch {
+    margin-top: 10px;
+  }
+
+  .get-in-touch h2 {
+    font-size: 16px; /* Уменьшаем заголовок */
+    top: 310%;
+  }
+
+  .get-in-touch button {
+    top: 322%;
+
+    font-size: 9px;
+    width: 100px;
+  }
+
+  .newsletter {
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .news-left h1 {
+    font-size: 14px;
+    padding: 10px;
+
+    margin: auto;
+  }
+  .news-right {
+    margin: 10px auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .news-right input[type="text"] {
+    width: 170px;
+    margin: 0px;
+  }
+  .news-right button {
+    width: 100px;
+    font-size: 11px;
+  }
+
+  footer {
+    margin: 0px;
+  }
+  .foot-company {
+    width: 205px;
+    text-align: center;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  .foot-top {
+    height: auto;
+  }
+  .foot-links {
+    margin-top: 5px;
+    
+    text-align: center;
+    justify-content: center;
+  }
+  .foot-links h1 {
+    display: none;
+  }
+  .foot-contact h4 {
+    display: none;
+  }
+  .foot-socials {
+    height: auto;
   }
 }
